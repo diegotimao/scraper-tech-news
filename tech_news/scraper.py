@@ -4,7 +4,6 @@ import time
 
 # Requisito 1
 def fetch(url):
-
     try:
         time.sleep(1)
         response = requests.get(
