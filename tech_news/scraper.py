@@ -5,7 +5,7 @@ def fetch(url):
 
 # Requisito 2
 def scrape_updates(html_content):
-    """Seu código deve vir aqui"""
+    """Seu código deve vir"""
 
 
 # Requisito 3
