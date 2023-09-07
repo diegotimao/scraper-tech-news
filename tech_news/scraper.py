@@ -5,12 +5,13 @@ from tech_news.database import create_news
 
 
 # Requisito 1
+
 def fetch(url):
     try:
         time.sleep(1)
-        response = requests.get(
-            url, {"user-agent": "Fake user-agent"}, timeout=3
-        )
+        headers = {"User-Agent": "Fake user-agent"}
+        response = requests.get(url, headers=headers, timeout=3)
+        print(response)  # Adicionando esta linha para imprimir o objeto de resposta HTTP
 
         if response.status_code != 200:
             return None
@@ -22,7 +23,7 @@ def fetch(url):
 
 # Requisito 2
 def scrape_updates(html_content):
-    selector = Selector(html_content)
+    selector = Selector(text=html_content)
     list_links = []
 
     for link in selector.css(".cs-overlay-link::attr(href)").getall():
@@ -33,7 +34,7 @@ def scrape_updates(html_content):
 
 # Requisito 3
 def scrape_next_page_link(html_content):
-    selectors = Selector(html_content)
+    selectors = Selector(text=html_content)
 
     next_page = selectors.css(".next::attr(href)").get()
 
@@ -45,7 +46,7 @@ def scrape_next_page_link(html_content):
 
 # Requisito 4
 def scrape_news(html_content):
-    selectors = Selector(html_content)
+    selectors = Selector(text=html_content)
     coments = selectors.css("#comments > h5::text").get()
     tags = selectors.css(".post-tags > ul > li > a::text").getall()
     coments_count = ""
