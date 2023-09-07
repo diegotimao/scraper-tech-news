@@ -142,13 +142,11 @@ Agora, o banco de dados está configurado e populado com notícias.
 
 ## Executando o Programa
 
-Para executar o programa, você pode importar o módulo `tech_news.menu` e chamar a função `analyzer_menu`. Isso abrirá um menu de opções onde você pode interagir com as funcionalidades do projeto.
+Para executar o programa a partir do terminal, basta usar o comando:
 
-```python
-from tech_news.menu import analyzer_menu
+```python tech_news/menu.py```
 
-analyzer_menu()
-```
+Isso executará o arquivo menu.py dentro do diretório tech_news, abrindo o menu de opções onde você pode interagir com as funcionalidades do projeto. Certifique-se de estar no diretório raiz do projeto ao executar esse comando para que o Python possa encontrar todos os módulos e dependências corretamente
 
 ### Função `analyzer_menu`
 
