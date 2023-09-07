@@ -3,9 +3,6 @@ from parsel import Selector
 import time
 from tech_news.database import create_news
 
-
-# Requisito 1
-
 def fetch(url):
     try:
         time.sleep(1)
@@ -20,8 +17,6 @@ def fetch(url):
     else:
         return response.text
 
-
-# Requisito 2
 def scrape_updates(html_content):
     selector = Selector(text=html_content)
     list_links = []
@@ -31,8 +26,6 @@ def scrape_updates(html_content):
 
     return list_links
 
-
-# Requisito 3
 def scrape_next_page_link(html_content):
     selectors = Selector(text=html_content)
 
@@ -43,8 +36,6 @@ def scrape_next_page_link(html_content):
 
     return next_page
 
-
-# Requisito 4
 def scrape_news(html_content):
     selectors = Selector(text=html_content)
     coments = selectors.css("#comments > h5::text").get()
@@ -76,8 +67,6 @@ def scrape_news(html_content):
         "url": selectors.css("[rel=canonical]::attr(href)").get(),
     }
 
-
-# Requisito 5
 def get_tech_news(amount):
     list = []
     list_links = []
