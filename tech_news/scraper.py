@@ -8,8 +8,7 @@ def fetch(url):
         time.sleep(1)
         headers = {"User-Agent": "Fake user-agent"}
         response = requests.get(url, headers=headers, timeout=3)
-        print(response)  # Adicionando esta linha para imprimir o objeto de resposta HTTP
-
+    
         if response.status_code != 200:
             return None
     except requests.ReadTimeout:
