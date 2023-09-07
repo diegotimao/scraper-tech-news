@@ -128,7 +128,25 @@ MONGODB_DATABASE=tech_news
 
 Isso configura a URI do MongoDB e o nome do banco de dados que o projeto usará. Certifique-se de que a URI esteja correta e aponte para o servidor MongoDB local.
 
-### 8. Popule o banco de dados:
+### 8. 
+
+No terminal, navegue até o diretório onde você criou o arquivo docker-compose.yml.
+
+Execute o seguinte comando para iniciar o contêiner MongoDB:
+
+```
+docker-compose up -d
+```
+
+O Docker Compose irá baixar a imagem do MongoDB (se ainda não tiver sido baixada) e iniciar o contêiner. O uso da opção -d executa o contêiner em segundo plano.
+
+Verifique se o contêiner MongoDB está em execução usando o seguinte comando:
+```
+docker ps
+```
+Isso listará os contêineres em execução, e você deve ver seu contêiner MongoDB na lista.
+
+### 9. Popule o banco de dados:
 
 Você pode usar a função `get_tech_news` para popular o banco de dados com notícias. Basta executar o programa principal:
 
