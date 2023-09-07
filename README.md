@@ -128,7 +128,7 @@ MONGODB_DATABASE=tech_news
 
 Isso configura a URI do MongoDB e o nome do banco de dados que o projeto usará. Certifique-se de que a URI esteja correta e aponte para o servidor MongoDB local.
 
-### 8. 
+### 8. Execultadno o Docker
 
 No terminal, navegue até o diretório onde você criou o arquivo docker-compose.yml.
 
